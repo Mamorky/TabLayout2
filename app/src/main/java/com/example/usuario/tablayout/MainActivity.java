@@ -1,5 +1,6 @@
 package com.example.usuario.tablayout;
 
+import android.app.FragmentManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabs);
 
         setSupportActionBar(toolbar);
-        viewPager.setAdapter();
+        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),5));
     }
 }
