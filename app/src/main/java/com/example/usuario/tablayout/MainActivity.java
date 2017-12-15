@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         for(String title:getResources().getStringArray(R.array.tab_layout)){
             tabLayout.addTab(tabLayout.newTab());
         }
-        ActionMode actionMode = new Ac
-
 
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(),
                 new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.tab_layout)))));
@@ -102,7 +100,14 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < tabLayout.getTabCount(); i++) {
             tabLayout.getTabAt(i).setIcon(typedArray.getDrawable(i));
         }
+    }
 
+    @Override
+    public void onBackPressed() {
+        if(viewPager.getCurrentItem()==0)
+            super.onBackPressed();
+        else
+            viewPager.setCurrentItem(viewPager.getCurrentItem()-1);
     }
 
     @Override
