@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.ActionMode;
 import android.view.Menu;
 import android.widget.TableLayout;
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         for(String title:getResources().getStringArray(R.array.tab_layout)){
             tabLayout.addTab(tabLayout.newTab());
         }
+        ActionMode actionMode = new Ac
 
 
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(),
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupTabIcons() {
         TypedArray typedArray = getResources().obtainTypedArray(R.array.icons);
         for(int i = 0; i < tabLayout.getTabCount(); i++) {
-            tabLayout.getTabAt(i).setIcon(typedArray.getResourceId(i,-1));
+            tabLayout.getTabAt(i).setIcon(typedArray.getDrawable(i));
         }
 
     }
