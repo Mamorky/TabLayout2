@@ -3,4 +3,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="tab_layout">
+        <item>Tab1</item>
+        <item>Tab2</item>
+        <item>Tab3</item>
+        <item>Tab4</item>
+        <item>Tab5</item>
+    </string-array>
 </resources>

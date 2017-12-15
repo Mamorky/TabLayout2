@@ -5,20 +5,24 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.ArrayList;
+
 /**
  * Created by usuario on 13/12/17.
  */
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     private  int count;
+    private ArrayList<String> titles;
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
-    public ViewPagerAdapter(FragmentManager fm, int count) {
+    public ViewPagerAdapter(FragmentManager fm, int count,ArrayList<String> titles) {
         super(fm);
         //count es el numero de paginas
         this.count = count;
+        this.titles = titles;
     }
 
     @Override
@@ -54,4 +58,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return count;
     }
+
+    /*@Override
+    public CharSequence getPageTitle(int position) {
+        return titles.get(position);
+    }*/
 }
